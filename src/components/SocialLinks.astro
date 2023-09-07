@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon";
+import presentation from "@/data/presentation";
+---
+
+<ul role="list" class="flex flex-row gap-2">
+  {
+    presentation.socials.map((social, index) => (
+      <>
+        <a href={social.link} class="text-zinc-700 hover:text-app-600" target="_blank">
+          <Icon name={social.icon} class="h-7 w-7" />
+        </a>
+
+        {presentation.socials.length - 1 !== index && <li>|</li>}
+      </>
+    ))
+  }
+</ul>
